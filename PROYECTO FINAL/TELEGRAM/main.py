@@ -3,7 +3,7 @@ import json
 import requests
 
 # Variables para el Token, la URL del chatbot y URL del NGROK
-TOKEN = "6588507509:AAEcdj_hE_OqOnOWG4nb7vHAbhPtDER1LIE"  # Cambialo por tu token
+TOKEN = ""  # Cambialo por tu token
 URLTEL = "https://api.telegram.org/bot" + TOKEN + "/"
 TELEGRAM_CHAT_ID = 1589850480
 
