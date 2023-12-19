@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#232527"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/blackBackground"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:text="Sensor de Humedad"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnBluetooth"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:onClick="onClick" />
+
+        <Button
+            android:id="@+id/btnBuscarDispositivo"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:enabled="true"
+            android:onClick="onClick"
+            android:text="Buscar Dispositivos" />
+
+        <ListView
+            android:id="@+id/lvDispositivos"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            style="@style/ListItemText"></ListView>
+    </LinearLayout>
+
+    <!-- Layout de la confirmación de parte de Arduino -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:orientation="vertical">
+
+        <!-- EditText que permite ingresar la URL para conectarse con el servidor y enviar el nuevo estado -->
+        <EditText
+            android:id="@+id/etUrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:hint="Ingrese la URL"
+            android:textColorHint="#BCBDBD" />
+
+        <!-- EditText que actualiza el estado Si/No a enviar al servidor -->
+        <EditText
+            android:id="@+id/tvRespuesta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:hint="Si/No"
+            android:textColorHint="#BCBDBD" />
+
+        <!-- Layout de la comunicación al servidor -->
+        <Button
+            android:id="@+id/btSend"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/send"
+            android:onClick="onGet"
+            android:text="GET" />
+
+        <TextView
+            android:id="@+id/tvResponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:hint="Estado actual del sensor"
+            android:textColorHint="#BCBDBD" />
+
+    </LinearLayout>
+
+    <!-- Layout de la comunicación al Arduino -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="193dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEncender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="80dp"
+            android:background="@drawable/encender"
+            android:text="Encender" />
+
+        <Button
+            android:id="@+id/btnApagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="20px"
+            android:background="@drawable/apagar"
+            android:text="Apagar" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
